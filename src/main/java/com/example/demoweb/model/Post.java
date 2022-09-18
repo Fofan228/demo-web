@@ -3,7 +3,9 @@ package com.example.demoweb.model;
 import java.util.Date;
 
 public class Post {
-    public Post(String text, Date creationDate) {
+    public Post(Long id, String text, Date creationDate, Integer likes) {
+        this.likes = likes;
+        this.id = id;
         this.text = text;
         this.creationDate = creationDate;
     }
@@ -15,6 +17,14 @@ public class Post {
         return likes;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
     public Date getCreationDate() {
         return creationDate;
     }
@@ -22,4 +32,5 @@ public class Post {
     private String text;
     private Integer likes;
     private Date creationDate;
+    private Long id;
 }
